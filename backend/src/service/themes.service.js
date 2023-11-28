@@ -93,10 +93,30 @@ const actualizarOrden = async function (orderData) {
   }
 };
 
+const eliminarPropiedad = async function (codigo) {
+  console.log("eliminar temas");
+  try {
+
+    await sequelize.query(`
+    DELETE FROM themes_properties
+    WHERE id = :codigo
+  `, {
+    replacements: { codigo: codigo },
+    type: sequelize.QueryTypes.DELETE
+  });
+
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+
 module.exports = {
   listar,
   busquedaPorCodigo: consultarPorCodigo,
   actualizar,
   eliminar,
   actualizarOrden,
+  eliminarPropiedad
 };

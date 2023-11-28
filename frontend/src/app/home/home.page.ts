@@ -169,4 +169,28 @@ export class HomePage implements OnInit {
         this.presentToast(error.message);
       });
   }
+
+  eliminarProperty(id: any){
+    let token = localStorage.getItem('token');
+    let config = {
+      headers: {
+        Authorization: token,
+      },
+    };
+    axios
+      .delete('http://localhost:3000/themes-coment/delete/' + id, config)
+      .then((result) => {
+        if (result.data.success == true) {
+          this.presentToast('Comentario Eliminado');
+          //this.getTopicsComments(idTopico);
+        } else {
+          this.presentToast(result.data.error);
+        }
+      })
+      .catch((error) => {
+        this.presentToast(error.message);
+      });
+  }
+
+  
 }

@@ -1,9 +1,9 @@
 <ion-router-outlet></ion-router-outlet>
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Study App</ion-title>
+    <ion-title>Alan Duarte</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="cerrarSesion()">
+      <ion-button color="danger" (click)="cerrarSesion()">
         Cerrar Sesión
         <ion-icon slot="end" name="log-out-outline"></ion-icon>
       </ion-button>
@@ -20,7 +20,7 @@
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button [routerLink]="'/topic-list'">
-        <ion-icon name="document-text-outline"></ion-icon>
+        <ion-icon name="list-outline"></ion-icon>
         Topicos
       </ion-tab-button>
       <ion-tab-button [routerLink]="'/theme-list'">
@@ -47,20 +47,23 @@
             {{tema_propiedad.theme_id}} - {{tema_propiedad.property_name}}
           </label>
         </div>
-
+        
         <!-- Boton para agregar propiedad -->
         <div class="ion-padding" slot="content">
           <ion-button fill="outline" (click)="guardarTema(tema)">Propiedad<ion-icon slot="end"
-              name="add-outline"></ion-icon>
+            name="add-outline"></ion-icon>
           </ion-button>
-
+          
         </div>
       </ion-accordion>
     </ion-accordion-group>
   </ion-card>
+  <!-- <ion-button color="danger" style="margin-left: auto;" (click)="eliminarProperty(5)"> -->
+    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+  <!-- </ion-button> -->
 </ion-content>
 
-<!-- Compartir Modal -->
+<!-- Modal -->
 <ion-modal [isOpen]="isOpenModal">
   <ng-template>
     <ion-content class="modal-content">

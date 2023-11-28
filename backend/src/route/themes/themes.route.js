@@ -19,5 +19,9 @@ module.exports = function (app) {
     authMiddleware.auth,
     themesController.actualizarOrden
   );
-
+  app.delete(
+    "/themes-coment/delete/:filtro",
+    authMiddleware.auth,
+    themesController.eliminarPropiedad
+  );
 };

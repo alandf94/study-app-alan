@@ -107,10 +107,27 @@ const actualizarOrden = async function (req, res) {
   }
 };
 
+const eliminarPropiedad = async function (req, res) {
+  console.log("eliminar temas controller");
+  try {
+    await themesService.eliminarPropiedad(req.params.filtro || "");
+    res.json({
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+    res.json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   listar,
   busquedaPorCodigo: consultarPorCodigo,
   actualizar,
   eliminar,
   actualizarOrden,
+  eliminarPropiedad
 };
