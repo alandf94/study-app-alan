@@ -32,23 +32,25 @@
 
     <ion-list class="scrollable-all-topics">
       <ion-reorder-group [disabled]="false" (ionItemReorder)="reorder($event)">
-        <ion-item *ngFor="let topico of topicos" [ngStyle]="{'background-color': topico.color + '20'}">
+       
+        <ion-item *ngFor="let topico of topicos" [ngStyle]="{'background-color': topico.color + '20'}" [routerLink]="'/topic-details/' + topico.id">
           <ion-label>{{topico.id}} - {{topico.name}}</ion-label>
           <ion-buttons slot="end">
             <input type="color" [(ngModel)]="topico.color" />
 
             <!-- Visualizar -->
-            <ion-button [routerLink]="'/topic-details/' + topico.id">
-              <ion-icon slot="icon-only" name="eye-outline" style="font-size: 30px;"></ion-icon>
-            </ion-button>
+            <!-- <ion-button > -->
+              <!-- <ion-icon slot="icon-only" name="eye-outline" style="font-size: 30px;"></ion-icon> -->
+            <!-- </ion-button> -->
 
             <!-- ELIMINAR TOPICO -->
-            <ion-button (click)="confirmDelete(topico)">
-              <ion-icon color="danger" slot="icon-only" name="trash-outline" style="font-size: 30px;"></ion-icon>
+            <ion-button style="margin-left: 30px;" (click)="confirmDelete(topico)">
+              <ion-icon color="danger" slot="icon-only" name="trash-outline" style="font-size: 120px;"></ion-icon>
             </ion-button>
           </ion-buttons>
           <ion-reorder slot="end"></ion-reorder>
         </ion-item>
+
       </ion-reorder-group>
     </ion-list>
 
@@ -56,20 +58,20 @@
 
   <ion-card>
     <ion-card-header class="comment-author">
-      {{textoTopicosCompartidos}}
+      {{textoTopicosCompartidos}} 
     </ion-card-header>
     <ion-card-content>
       <ion-list class="scrollable-topics">
         <ion-item *ngFor="let topico of topicosCompartidosConmigo"
-          [ngStyle]="{'background-color': topico.color + '20'}">
+          [ngStyle]="{'background-color': topico.color + '20'}" [routerLink]="'/topic-details/' + topico.id" >
           <ion-label>
             {{topico.id}} - {{topico.name}} por {{topico.shared_by_user_name}} {{topico.shared_by_user_last_name}}
           </ion-label>
           <ion-buttons slot="end">
             <!-- Visualizar -->
-            <ion-button [routerLink]="'/topic-details/' + topico.id">
+            <!-- <ion-button [routerLink]="'/topic-details/' + topico.id">
               <ion-icon slot="icon-only" name="eye-outline" style="font-size: 30px;"></ion-icon>
-            </ion-button>
+            </ion-button> -->
 
 
             <!-- ELIMINAR TOPICO -->
@@ -88,7 +90,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list class="scrollable-topics">
-        <ion-item *ngFor="let topico of topicosPorLikes" [ngStyle]="{'background-color': topico.color + '20'}">
+        <ion-item *ngFor="let topico of topicosPorLikes" [ngStyle]="{'background-color': topico.color + '20'}" [routerLink]="'/topic-details/' + topico.id">
           <ion-label>
             {{topico.id}} - {{topico.name}}
           </ion-label>
@@ -99,9 +101,9 @@
           </ion-chip>
           <ion-buttons slot="end">
             <!-- Visualizar -->
-            <ion-button [routerLink]="'/topic-details/' + topico.id">
+            <!-- <ion-button >
               <ion-icon slot="icon-only" name="eye-outline" style="font-size: 30px;"></ion-icon>
-            </ion-button>
+            </ion-button> -->
           </ion-buttons>
         </ion-item>
       </ion-list>

@@ -64,7 +64,7 @@
   <ion-card>
     <ion-card-header>
       <div class="icon-row">
-        <ion-button (click)="compartir(topic)">
+        <ion-button color="danger" (click)="compartir(topic)">
           <ion-icon name="share-social-outline"></ion-icon>
         </ion-button>
         <ion-button style="margin-left: 5px;" (click)="abrirCerrarModal()">
@@ -93,9 +93,9 @@
       <ion-card>
         <ion-card-header>
           <div class="icon-row">
-            <ion-button (click)="abrirCerrarModal()">
+            <ion-button color="danger" (click)="abrirCerrarModal()">
               Cerrar
-              <ion-icon slot="end" name="close-outline"></ion-icon>
+              <ion-icon  slot="end" name="close-outline"></ion-icon>
             </ion-button>
             <ion-button style="margin-left: 5px;" (click)="guardarComentario()">
               Agregar
