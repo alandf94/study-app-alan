@@ -36,7 +36,7 @@
         <ion-item *ngFor="let topico of topicos" [ngStyle]="{'background-color': topico.color + '20'}" [routerLink]="'/topic-details/' + topico.id">
           <ion-label>{{topico.id}} - {{topico.name}}</ion-label>
           <ion-buttons slot="end">
-            <input type="color" [(ngModel)]="topico.color" />
+            <!-- <input type="color" [(ngModel)]="topico.color" /> -->
 
             <!-- Visualizar -->
             <!-- <ion-button > -->

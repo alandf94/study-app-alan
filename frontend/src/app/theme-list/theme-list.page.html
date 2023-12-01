@@ -28,7 +28,7 @@
           <ion-label [routerLink]="'/theme-edit/'+tema.id">{{tema.id}} - {{tema.name}} -
             {{tema.description}}</ion-label>
           <!-- Visualizar -->
-          <ion-icon style="font-size: 30px;" name="eye-outline" (click)="cambiarPantalla(tema.id)"></ion-icon>
+          <ion-icon color="primary" style="font-size: 30px;" name="eye-outline" (click)="cambiarPantalla(tema.id)"></ion-icon>
           <!-- EDITAR TEMA-->
           <ion-icon style="font-size: 30px;" name="create" color="warning" [routerLink]="'/theme-edit/'+tema.id"></ion-icon>
           <!-- ELIMINAR TEMA-->
